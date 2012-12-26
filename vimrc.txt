@@ -4,6 +4,10 @@ set backspace=2 "
 
 set autoindent " Copies indentation from previous line.
 set smartindent " Adds a level of indentation in some situations. Mostly c-like files.
+
+set tabstop=2 " Size of a tab in terms of spaces.
+set shiftwidth=2 " Spaces when using >> or <<
+set expandtab " Expand tabs to equivalent spaces.
 "
 
 " Misc
