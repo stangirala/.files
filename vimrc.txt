@@ -1,6 +1,6 @@
-" Space and Tabs
+"Space and Tabs
 set nocompatible " Back compatability.
-set backspace=2 "
+set backspace=2
 
 set autoindent " Copies indentation from previous line.
 set smartindent " Adds a level of indentation in some situations. Mostly c-like files.
@@ -8,10 +8,11 @@ set smartindent " Adds a level of indentation in some situations. Mostly c-like 
 set tabstop=2 " Size of a tab in terms of spaces.
 set shiftwidth=2 " Spaces when using >> or <<
 set expandtab " Expand tabs to equivalent spaces.
-"
+
 
 " Misc
 set ruler " Side ruler.
+
 set number " Line numbering.
 
 set showmatch " Match braces
@@ -25,18 +26,21 @@ set list " Highligh Indent Guides.
 set autoread " Reaload modified files. This does not seem to work for some people. Use :e to manually reload. It does not technically reload but does re-edit the file when changes are made outside of vim.
 
 set nocursorline   " Highlight current line.
+
 set encoding=utf-8
-"
 
 " Syntax Colouring
 syntax enable
-"
+
 
 " Highlight Trailing Whitespace
 set list listchars=trail:.,tab:>.
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
+
 " Word Processing
+set wrap " Softwrap
+
+set linebreak
+
 set textwidth=0
-" Saves you from using gqip or gwip.
-set formatoptions+=ta
