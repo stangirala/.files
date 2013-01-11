@@ -1,6 +1,6 @@
 " Space and Tabs
 set nocompatible " Back compatability.
-set backspace=2 " 
+set backspace=2 "
 
 set autoindent " Copies indentation from previous line.
 set smartindent " Adds a level of indentation in some situations. Mostly c-like files.
@@ -35,4 +35,8 @@ syntax enable
 " Highlight Trailing Whitespace
 set list listchars=trail:.,tab:>.
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
-"
+
+" Word Processing
+set textwidth=0
+" Saves you from using gqip or gwip.
+set formatoptions+=ta
