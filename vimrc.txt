@@ -29,6 +29,12 @@ set nocursorline   " Highlight current line.
 
 set encoding=utf-8
 
+set modeline
+
+set ls=2 " Display filename.
+
+set statusline+=%F%R " File path and read-only mode.
+
 " Syntax Colouring
 syntax enable
 
