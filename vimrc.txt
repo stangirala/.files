@@ -33,7 +33,7 @@ set modeline
 
 set ls=2 " Display filename.
 
-set statusline+=%F%R " File path and read-only mode.
+set statusline+=%F%R " File path and read-only mode. echo @% displays filename otherwise.
 
 " Syntax Colouring
 syntax enable
