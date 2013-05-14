@@ -1,12 +1,12 @@
 "Space and Tabs
-set nocompatible " Back compatability.
+set nocompatible  " Back compatability.
 set backspace=2
 
 set autoindent " Copies indentation from previous line.
 set smartindent " Adds a level of indentation in some situations. Mostly c-like files.
 
 set tabstop=2 " Size of a tab in terms of spaces.
-set shiftwidth=2 " Spaces when using >> or <<
+set shiftwidth=2 " Spaces when using >> or <<.
 set expandtab " Expand tabs to equivalent spaces.
 
 
@@ -21,19 +21,13 @@ set visualbell " Visual bell.
 
 set showmode " Display edit mode.
 
-set list " Highligh Indent Guides.
+set nolist " Highligh Indent Guides.
 
 set autoread " Reaload modified files. This does not seem to work for some people. Use :e to manually reload. It does not technically reload but does re-edit the file when changes are made outside of vim.
 
 set nocursorline   " Highlight current line.
 
 set encoding=utf-8
-
-set modeline
-
-set ls=2 " Display filename.
-
-set statusline+=%F%R " File path and read-only mode. echo @% displays filename otherwise.
 
 " Syntax Colouring
 syntax enable
@@ -50,3 +44,13 @@ set wrap " Softwrap
 set linebreak
 
 set textwidth=0
+
+set modeline
+
+set ls=2
+set statusline+=%F%R
+
+" ctags tag list. Search until the root directory
+set tags=tags;/
+
+"call pathogen#infect()
