@@ -1,5 +1,5 @@
 "Space and Tabs
-set nocompatible  " Back compatability.
+set nocompatible " Back compatability.
 set backspace=2
 
 set autoindent " Copies indentation from previous line.
@@ -25,7 +25,7 @@ set nolist " Highligh Indent Guides.
 
 set autoread " Reaload modified files. This does not seem to work for some people. Use :e to manually reload. It does not technically reload but does re-edit the file when changes are made outside of vim.
 
-set nocursorline   " Highlight current line.
+set nocursorline " Highlight current line.
 
 set encoding=utf-8
 
@@ -48,7 +48,19 @@ set textwidth=0
 set modeline
 
 set ls=2
-set statusline+=%F%R
+
+" Owning the statusline.
+set statusline+=%F%R\                               " Filename
+set statusline+=[%H%M%R%W,\                         " Flags
+set statusline+=%y,\                                " Filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc},\       " Ecoding
+set statusline+=%{&fileformat}]                     " file format
+set statusline+=%=                                  " left/right separator
+set statusline+=%c:%l/%L                            " LineNum/TotLine:ColumnCur
+set statusline+=\ %P                                " Percent through file
+
+" Autosave
+autocmd BufLeave,FocusLost * silent! wall
 
 " ctags tag list. Search until the root directory
 set tags=tags;/
