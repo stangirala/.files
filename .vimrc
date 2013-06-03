@@ -60,12 +60,14 @@ set statusline+=%c:%l/%L                            " LineNum/TotLine:ColumnCur
 set statusline+=\ %P                                " Percent through file
 
 " Autosave
-autocmd BufLeave,FocusLost * silent! wall
+autocmd InsertLeave * silent! wall
 
 " ctags tag list. Search until the root directory
 set tags=tags;/
 
-"call pathogen#infect()
+"call pathogen#infect()i
 
 " Move this to ftplugin when you feel the need.
-autocmd BufRead,BufNewFile makefile setlocal noexpandtab
+" InsertLeave works but its a bit slow
+autocmd BufRead,BufNewFile,InsertLeave makefile setlocal noexpandtab nolist
+autocmd BufWritePost makefile setlocal list
