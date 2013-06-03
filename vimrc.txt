@@ -66,3 +66,6 @@ autocmd BufLeave,FocusLost * silent! wall
 set tags=tags;/
 
 "call pathogen#infect()
+
+" Move this to ftplugin when you feel the need.
+autocmd BufRead,BufNewFile makefile setlocal noexpandtab
