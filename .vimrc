@@ -50,20 +50,33 @@ set modeline
 set ls=2
 
 " Owning the statusline.
+
+"Git branch (thank you ... http://amix.dk/blog/post/19571)
+function! GitBranch()
+  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  if branch != ''
+    return 'Git Branch: ' . substitute(branch, '\n', '', 'g')
+  en
+    return 'Git Branch:No.'
+endfunction
+
+
 set statusline+=%F%R\                               " Filename
 set statusline+=[%H%M%R%W,\                         " Flags
 set statusline+=%y,\                                " Filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},\       " Ecoding
-set statusline+=%{&fileformat}]                     " file format
+set statusline+=%{&fileformat}],\                   " file format
+set statusline+=%{GitBranch()}                      " Show git branch
 set statusline+=%=                                  " left/right separator
-set statusline+=%c:%l/%L                            " LineNum/TotLine:ColumnCur
+set statusline+=%c:%l/%L                            " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
 
-" Autosave
+
+" Autosave TODO Fix this.
 autocmd InsertLeave * silent! wall
 
-" ctags tag list. Search until the root directory
-set tags=tags;/
+" ctags tag list. Search until the home directory
+set tags=./tags,tags;$HOME
 
 "call pathogen#infect()i
 
