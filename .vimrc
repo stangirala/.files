@@ -65,10 +65,10 @@ set statusline+=%F%R\                               " Filename
 set statusline+=[%H%M%R%W,\                         " Flags
 set statusline+=%y,\                                " Filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},\       " Ecoding
-set statusline+=%{&fileformat}],\                   " file format
-set statusline+=%{GitBranch()}                      " Show git branch
+set statusline+=%{&fileformat}]\                  " file format
+"set statusline+=%{GitBranch()}                     " Show git branch
 set statusline+=%=                                  " left/right separator
-set statusline+=%c:%l/%L                            " ColumnCur:LineNum/TotLine
+set statusline+=%l/%L\ :\ %c                            " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
 
 
@@ -84,3 +84,6 @@ set tags=./tags,tags;$HOME
 " InsertLeave works but its a bit slow
 autocmd BufRead,BufNewFile,InsertLeave makefile setlocal noexpandtab nolist
 autocmd BufWritePost makefile setlocal list
+
+" TODO Fix this. Show git branch on status line.
+"autocmd BufEnter makefile setlocal statusline=%{GitBranch()}
