@@ -29,6 +29,8 @@ set nocursorline " Highlight current line.
 
 set encoding=utf-8
 
+set scrolloff=15 " Give context when moving to a line.
+
 " Syntax Colouring
 syntax enable
 
