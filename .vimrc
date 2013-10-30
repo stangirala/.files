@@ -89,3 +89,7 @@ autocmd BufWritePost makefile setlocal list
 
 " TODO Fix this. Show git branch on status line.
 "autocmd BufEnter makefile setlocal statusline=%{GitBranch()}
+
+" Nifty wordprocessing,
+map j gj
+map k gk
