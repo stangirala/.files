@@ -1,3 +1,9 @@
+set term=xterm-256color
+set t_Co=256
+
+" Le infect.
+execute pathogen#infect()
+
 "Space and Tabs
 set nocompatible " Back compatability.
 set backspace=2
@@ -33,7 +39,9 @@ set scrolloff=15 " Give context when moving to a line.
 
 " Syntax Colouring
 syntax enable
-
+filetype plugin indent on
+set background=dark
+colorscheme solarized
 
 " Highlight Trailing Whitespace
 set list listchars=trail:.,tab:>.
@@ -79,8 +87,6 @@ autocmd InsertLeave * silent! wall
 
 " ctags tag list. Search until the home directory
 set tags=./tags,tags;$HOME
-
-"call pathogen#infect()i
 
 " Move this to ftplugin when you feel the need.
 " InsertLeave works but its a bit slow
