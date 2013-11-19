@@ -1,0 +1,15 @@
+[user]
+	name = Sarma Tangirala
+	email = vtangira@buffalo.edu
+[diff]
+	tool = meld
+	tool = meld
+[color]
+	diff = always
+	branch = always
+	interactive = always
+	status = always
+[difftool]
+	prompt = false
+[alias]
+	tree = log --graph --oneline --decorate --all --full-diff
