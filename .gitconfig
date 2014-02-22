@@ -13,3 +13,5 @@
 	prompt = false
 [alias]
 	tree = log --graph --oneline --decorate --all --full-diff
+[core]
+    editor = vim
