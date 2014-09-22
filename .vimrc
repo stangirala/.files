@@ -9,7 +9,8 @@ set nocompatible " Back compatability.
 set backspace=2
 
 set autoindent " Copies indentation from previous line.
-set smartindent " Adds a level of indentation in some situations. Mostly c-like files.
+set nosmartindent " Does not add a level of indentation in some situations.
+                  " Mostly c-like files.
 
 set tabstop=2 " Size of a tab in terms of spaces.
 set shiftwidth=2 " Spaces when using >> or <<.
@@ -29,7 +30,9 @@ set showmode " Display edit mode.
 
 set nolist " Highligh Indent Guides.
 
-set autoread " Reaload modified files. This does not seem to work for some people. Use :e to manually reload. It does not technically reload but does re-edit the file when changes are made outside of vim.
+set autoread " Reaload modified files. This does not seem to work for some people.
+             " Use :e to manually reload. It does not technically reload but does re-edit
+             " the file when changes are made outside of vim.
 
 set nocursorline " Highlight current line.
 
@@ -38,6 +41,7 @@ set encoding=utf-8
 set scrolloff=15 " Give context when moving to a line.
 
 " Syntax Colouring
+let g:solarized_termcolors=256
 syntax enable
 filetype plugin indent on
 set background=dark
