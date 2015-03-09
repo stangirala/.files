@@ -63,18 +63,6 @@ set modeline
 
 set ls=2
 
-" Owning the statusline.
-
-"Git branch (thank you ... http://amix.dk/blog/post/19571)
-function! GitBranch()
-  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
-  if branch != ''
-    return 'Git Branch: ' . substitute(branch, '\n', '', 'g')
-  en
-    return 'Git Branch:No.'
-endfunction
-
-
 set statusline+=%F%R\                               " Filename
 set statusline+=[%H%M%R%W,\                         " Flags
 set statusline+=%y,\                                " Filetype
@@ -87,15 +75,15 @@ set statusline+=\ %P                                " Percent through file
 
 
 " Autosave TODO Fix this.
-autocmd InsertLeave * silent! wall
+"autocmd InsertLeave * silent! wall
 
 " ctags tag list. Search until the home directory
 set tags=./tags,tags;$HOME
 
 " Move this to ftplugin when you feel the need.
 " InsertLeave works but its a bit slow
-autocmd BufRead,BufNewFile,InsertLeave makefile setlocal noexpandtab nolist
-autocmd BufWritePost makefile setlocal list
+"autocmd BufRead,BufNewFile,InsertLeave makefile setlocal noexpandtab nolist
+"autocmd BufWritePost makefile setlocal list
 
 " TODO Fix this. Show git branch on status line.
 "autocmd BufEnter makefile setlocal statusline=%{GitBranch()}
@@ -103,3 +91,7 @@ autocmd BufWritePost makefile setlocal list
 " Nifty wordprocessing,
 map j gj
 map k gk
+
+" Search highlighting.
+set hlsearch
+nnoremap <esc> :noh <return><esc>
