@@ -94,4 +94,4 @@ map k gk
 
 " Search highlighting.
 set hlsearch
-nnoremap <esc> :noh <return><esc>
+nnoremap <space> :noh <return><esc>
