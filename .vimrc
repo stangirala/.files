@@ -12,7 +12,7 @@ set autoindent " Copies indentation from previous line.
 set nosmartindent " Does not add a level of indentation in some situations.
                   " Mostly c-like files.
 
-set tabstop=2 " Size of a tab in terms of spaces.
+set tabstop=4 " Size of a tab in terms of spaces.
 set shiftwidth=2 " Spaces when using >> or <<.
 set expandtab " Expand tabs to equivalent spaces.
 
