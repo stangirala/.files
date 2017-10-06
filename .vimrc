@@ -4,6 +4,11 @@ set t_Co=256
 " Le infect.
 execute pathogen#infect()
 
+let mapleader = ","
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
 "Space and Tabs
 set nocompatible " Back compatability.
 set backspace=2
@@ -12,7 +17,7 @@ set autoindent " Copies indentation from previous line.
 set nosmartindent " Does not add a level of indentation in some situations. Mostly c-like files.
 
 set tabstop=4 " Size of a tab in terms of spaces.
-set shiftwidth=2 " Spaces when using >> or <<.
+set shiftwidth=4 " Spaces when using >> or <<.
 set expandtab " Expand tabs to equivalent spaces.
 
 " Misc
@@ -46,7 +51,10 @@ highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 " Word Processing
 set wrap " Softwrap
 set linebreak
-set textwidth=0
+
+set textwidth=80
+set fo+=t
+
 set modeline
 set ls=2
 set statusline+=%F%R\                               " Filename
@@ -54,10 +62,11 @@ set statusline+=[%H%M%R%W,\                         " Flags
 set statusline+=%y,\                                " Filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},\       " Ecoding
 set statusline+=%{&fileformat}]\                  " file format
-"set statusline+=%{GitBranch()}                     " Show git branch
 set statusline+=%=                                  " left/right separator
 set statusline+=%l/%L\ :\ %c                            " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
+
+set statusline+=%{LineNoIndicator()}
 
 " Autosave TODO Fix this.
 "autocmd InsertLeave * silent! wall
@@ -78,9 +87,18 @@ map j gj
 map k gk
 
 " Search
-set hlsearch
 nnoremap <space> :noh <return><esc>
 set incsearch
+"cnoremap <c-n> <CR>n/<c-p>
 
 " Clipboard
 "vmap <C-C> "+y
+"
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+nmap <leader>p <c-p>
+
+
+set foldmethod=syntax
+set foldlevel=1
