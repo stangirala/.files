@@ -8,6 +8,7 @@ let mapleader = ","
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>e :wq<CR>
 
 "Space and Tabs
 set nocompatible " Back compatability.
@@ -34,7 +35,6 @@ set autoread " Reaload modified files. This does not seem to work for some peopl
 set nocursorline " Highlight current line.
 set encoding=utf-8
 set scrolloff=15 " Give context when moving to a line.
-set mouse=a
 
 " Syntax Colouring
 let g:solarized_termcolors=256
@@ -61,9 +61,9 @@ set statusline+=%F%R\                               " Filename
 set statusline+=[%H%M%R%W,\                         " Flags
 set statusline+=%y,\                                " Filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},\       " Ecoding
-set statusline+=%{&fileformat}]\                  " file format
+set statusline+=%{&fileformat}]\                    " file format
 set statusline+=%=                                  " left/right separator
-set statusline+=%l/%L\ :\ %c                            " ColumnCur:LineNum/TotLine
+set statusline+=%l/%L\ :\ %c                        " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
 
 set statusline+=%{LineNoIndicator()}
@@ -99,6 +99,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nmap <leader>p <c-p>
 
-
 set foldmethod=syntax
 set foldlevel=1
+let g:markdown_folding = 1
