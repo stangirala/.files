@@ -67,3 +67,10 @@ if ! [[ -a ~/delete_recover ]]  then
   mkdir ~/delete_recover
 fi
 rm () { mv $* ~/delete_recover }
+
+# Allow virtualenv prompt mangling
+export VIRTUAL_ENV_DISABLE_PROMPT=0
+
+GOGETPATH=~/go/bin/
+
+export PATH=$PATH:$GOGETPATH

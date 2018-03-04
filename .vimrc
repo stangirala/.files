@@ -26,8 +26,7 @@ set ruler " Side ruler.
 set number " Line numbering.
 set relativenumber
 set showmatch " Match braces
-set visualbell " Visual bell.
-set showmode " Display edit mode.
+set visualbell " Visual bell.  set showmode " Display edit mode.
 set nolist " Highligh Indent Guides.
 set autoread " Reaload modified files. This does not seem to work for some people.
              " Use :e to manually reload. It does not technically reload but does re-edit
@@ -66,7 +65,7 @@ set statusline+=%=                                  " left/right separator
 set statusline+=%l/%L\ :\ %c                        " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
 
-set statusline+=%{LineNoIndicator()}
+"set statusline+=%{LineNoIndicator()}
 
 " Autosave TODO Fix this.
 "autocmd InsertLeave * silent! wall
@@ -89,7 +88,7 @@ map k gk
 " Search
 nnoremap <space> :noh <return><esc>
 set incsearch
-"cnoremap <c-n> <CR>n/<c-p>
+cnoremap <c-n> <CR>n/<c-p>
 
 " Clipboard
 "vmap <C-C> "+y
