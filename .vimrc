@@ -65,11 +65,6 @@ set statusline+=%=                                  " left/right separator
 set statusline+=%l/%L\ :\ %c                        " ColumnCur:LineNum/TotLine
 set statusline+=\ %P                                " Percent through file
 
-"set statusline+=%{LineNoIndicator()}
-
-" Autosave TODO Fix this.
-"autocmd InsertLeave * silent! wall
-
 " ctags tag list. Search until the home directory
 set tags=./tags,tags;$HOME
 
@@ -91,8 +86,7 @@ set incsearch
 cnoremap <c-n> <CR>n/<c-p>
 
 " Clipboard
-"vmap <C-C> "+y
-"
+"nmap <c-c> "+y
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -101,3 +95,8 @@ nmap <leader>p <c-p>
 set foldmethod=syntax
 set foldlevel=1
 let g:markdown_folding = 1
+
+" Remember old position on open
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif

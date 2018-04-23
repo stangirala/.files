@@ -71,6 +71,8 @@ rm () { mv $* ~/delete_recover }
 # Allow virtualenv prompt mangling
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 
-GOGETPATH=~/go/bin/
-
-export PATH=$PATH:$GOGETPATH
+# gopath
+if ! [[ -a ~/go_path_dir ]]  then
+  mkdir ~/go_path_dir
+fi
+export GOPATH=~/go_path_dir
