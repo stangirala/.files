@@ -76,3 +76,6 @@ if ! [[ -a ~/go_path_dir ]]  then
   mkdir ~/go_path_dir
 fi
 export GOPATH=~/go_path_dir
+
+HISTSIZE=500000
+SAVEHIST=20000

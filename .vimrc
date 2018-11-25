@@ -5,7 +5,7 @@ set t_Co=256
 execute pathogen#infect()
 
 let mapleader = ","
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :wq<CR>
