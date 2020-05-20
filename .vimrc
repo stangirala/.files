@@ -93,7 +93,7 @@ let g:ctrlp_cmd = 'CtrlP'
 nmap <leader>p <c-p>
 
 set foldmethod=syntax
-set foldlevel=1
+set foldlevel=20
 let g:markdown_folding = 1
 
 " Remember old position on open
