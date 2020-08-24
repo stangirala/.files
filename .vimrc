@@ -1,9 +1,6 @@
 set term=xterm-256color
 set t_Co=256
 
-" Le infect.
-execute pathogen#infect()
-
 let mapleader = ","
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>w :w<CR>
@@ -35,12 +32,10 @@ set nocursorline " Highlight current line.
 set encoding=utf-8
 set scrolloff=15 " Give context when moving to a line.
 
-" Syntax Colouring
-let g:solarized_termcolors=256
+" Colours and Syntax
+colo simple-dark
 syntax enable
 filetype plugin indent on
-colorscheme solarized
-set background=dark
 
 " Highlight Trailing Whitespace
 "set list listchars=trail:.,tab:>.
