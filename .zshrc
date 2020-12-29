@@ -37,10 +37,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-#Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# Unshare hisory
+# Command hisory
+setopt inc_append_history
 unsetopt share_history
 
 # Add timestamps to history
@@ -77,5 +78,5 @@ if ! [[ -a ~/go_path_dir ]]  then
 fi
 export GOPATH=~/go_path_dir
 
-HISTSIZE=500000
-SAVEHIST=20000
+HISTSIZE=5000000
+SAVEHIST=2000000

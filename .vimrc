@@ -7,6 +7,8 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :wq<CR>
 
+execute pathogen#infect()
+
 "Space and Tabs
 set nocompatible " Back compatability.
 set backspace=2
