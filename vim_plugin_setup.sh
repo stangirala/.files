@@ -5,6 +5,8 @@ BUNDLE=$HOME/.vim/bundle/
 
 function setup_custom_colours {
     COLORS=$BASE/colors
+    mkdir -p $COLORS
+
     TMP=$(mktemp -d)
     git clone https://github.com/zefei/simple-dark $TMP
     mv $TMP/colors/simple-dark.vim $COLORS
